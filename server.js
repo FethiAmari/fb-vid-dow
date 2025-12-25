@@ -33,13 +33,13 @@ app.post('/get-video-info', async (req, res) => {
 
         console.log('Getting info for:', url);
 
-        const info = await ytdl(url, {
-            dumpSingleJson: true,
+        dumpSingleJson: true,
             noCheckCertificates: true,
-            noWarnings: true,
-            preferFreeFormats: true,
-            format: 'best'
-        });
+                noWarnings: true,
+                    preferFreeFormats: true,
+                        userAgent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                            addHeader: ['Accept-Language:en-US,en;q=0.9'],
+                                format: 'best'
 
         res.json({
             success: true,
